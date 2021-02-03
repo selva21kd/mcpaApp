@@ -27,9 +27,9 @@ import SplashScreen from 'react-native-splash-screen';
 
 const App: () => React$Node = () => {
 
-  // useEffect(() => {
-  //   SplashScreen.hide();
-  // }, []);
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
 
   return (
     <>
