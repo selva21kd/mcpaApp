@@ -12,16 +12,20 @@
       android:theme="@style/AppTheme">
 
       <!-- Splash Screen Activity -->
-      <activity
+      <!-- <activity
         android:name=".SplashActivity"
         android:theme="@style/SplashTheme"
         android:label="@string/app_name"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+        android:launchMode="singleTask"
+        android:resizeableActivity="false"
+        android:windowSoftInputMode="adjustResize"
       >
         <intent-filter>
           <action android:name="android.intent.action.MAIN" />
           <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
-      </activity>
+      </activity> -->
 
       <activity
         android:name=".MainActivity"
@@ -29,11 +33,12 @@
         android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
         android:launchMode="singleTask"
         android:windowSoftInputMode="adjustResize"
+        android:resizeableActivity="false"
         android:exported="true">
-        <!-- <intent-filter>
+        <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter> -->
+        </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
 
