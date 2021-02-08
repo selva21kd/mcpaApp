@@ -9,7 +9,7 @@ target 'mcpaApp' do
   use_react_native!(:path => config["reactNativePath"])
 
 
-  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
+  # pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
 
   target 'mcpaAppTests' do
     inherit! :complete
@@ -20,10 +20,11 @@ target 'mcpaApp' do
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
   # you should disable these next few lines.
-  use_flipper!
-  post_install do |installer|
-    flipper_post_install(installer)
-  end
+  # use_flipper!
+  # use_flipper!({ 'Flipper-Folly' => '2.3.0' }) 
+  # post_install do |installer|
+    # flipper_post_install(installer)
+  # end
 end
 
 target 'mcpaApp-tvOS' do

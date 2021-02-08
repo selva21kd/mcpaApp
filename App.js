@@ -6,16 +6,14 @@ import { PersistGate } from 'redux-persist/lib/integration/react'
 import  StoreConfig from './src/Store'
 import  Navigator  from './src/Navigator'
 import SplashScreen from 'react-native-splash-screen';
-import firestore from '@react-native-firebase/firestore';
-
+import { getAppLanguges } from "./src/Services/LanguageSelection/actions";
 const { store, persistor } = StoreConfig();
 
 
 export default class App extends React.Component {
 
     componentDidMount(){
-      const usersCollection = firestore().collection('mcpa_app');
-      console.log("am i executing", usersCollection)
+        getAppLanguges();
         if(Platform.OS==='android'){
             setTimeout(() => {SplashScreen.hide()}, 2500);    
         }else{
