@@ -15,7 +15,7 @@ export default function () {
 
   // Get current theme from the store
   const currentTheme = 'default'; //useSelector((state) => state.theme.theme || 'default')
-  const isDark = useSelector((state) => state.theme.darkMode)
+  const isDark = null; //useSelector((state) => state.theme.darkMode)
   const darkMode = isDark === null ? colorScheme === 'dark' : isDark
   //Select the right theme light theme ({} if not exist)
   const { Variables: themeConfigVars = {}, ...themeConfig } =

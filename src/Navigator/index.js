@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react'
-import { createStackNavigator } from '@react-navigation/stack'
-import { createDrawerNavigator } from '@react-navigation/drawer'
-import { NavigationContainer } from '@react-navigation/native'
-import { navigationRef } from './rootNavigationService'
-import { SafeAreaView, StatusBar, View, Text, Button } from 'react-native'
-import { useTheme } from '../Theme'
+import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import { navigationRef } from './rootNavigationService';
+import { SafeAreaView, StatusBar, View, Button } from 'react-native';
+import { useTheme } from '../Theme';
 import { AppearanceProvider } from 'react-native-appearance';
-import { MainNavigator } from "../Screens/MainNavigator";
+import { useDispatch } from "react-redux";
 
-
+import { getAppLanguges } from '../Services/LanguageSelection/actions';
+import AuthStack from './Stacks/AuthStack';
 
 function HomeScreen({ navigation }) {
     return (
@@ -35,7 +36,10 @@ const Drawer = createDrawerNavigator();
 
 
 const Navigator = () => {
-
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getAppLanguges());
+    }, [])
 
     const { Layout, NavigationTheme } = useTheme();
     const { colors } = NavigationTheme;
@@ -45,10 +49,11 @@ const Navigator = () => {
             <SafeAreaView style={[Layout.fill, { backgroundColor: colors.card }]}>
                  <NavigationContainer ref={navigationRef}>
                     <StatusBar barStyle="dark-content" />
-                    <Drawer.Navigator initialRouteName="Home">
+                    <AuthStack />
+                    {/* <Drawer.Navigator initialRouteName="Home">
                         <Drawer.Screen name="Home" component={HomeScreen} />
                         <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-                    </Drawer.Navigator>
+                    </Drawer.Navigator> */}
                 </NavigationContainer>
             </SafeAreaView>
         </AppearanceProvider>
