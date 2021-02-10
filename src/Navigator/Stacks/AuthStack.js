@@ -5,6 +5,7 @@ import { createStackNavigator, HeaderBackButton } from '@react-navigation/stack'
 
 import { ROUTE_NAMES } from '../../Constant/actionAndRouteConstant';
 import GetStarted from '../../Screens/GetStarted';
+import LanguageSelection from "../../Screens/LanguageSelection";
 // import Ionicons from 'react-native-vector-icons/Ionicons';
 
 
@@ -49,15 +50,15 @@ const headerOptions = {
   headerTitleStyle:{fontSize: 14, fontWeight:'700', fontFamily:'Roboto', letterSpacing:0.17},
   headerTintColor:'black',
   headerMode: 'none',
-  // headerLeft: (props) => <HeaderBackIcon {...props} />,
+  headerLeft: (props) => <HeaderBackIcon {...props} />,
 }
  
 function AuthStack() {
   return (
     <Stack.Navigator screenOptions={{headerShown: true, headerTitleAlign: 'center', ...headerOptions}} >
       <Stack.Screen name={ROUTE_NAMES.INITIAL_GET_STARTED} component={GetStarted} options={{headerShown:false}} />
-      {/* <Stack.Screen name='SignUpScreen' component={SignUpScreen} options={{title:'Sign Up'}} />
-      <Stack.Screen name='LoginScreen' component={LoginScreen} options={{title:'Login'}} />
+      <Stack.Screen name={ROUTE_NAMES.LANGUAGE_SELECTION} component={LanguageSelection} options={{title:'Language Selection'}} />
+      {/* <Stack.Screen name='LoginScreen' component={LoginScreen} options={{title:'Login'}} />
       <Stack.Screen name={ROUTE_NAMES.OTP_SCREEN} component={OtpScreen} options={({route})=>({title:_.get(route, 'params.customTitle', 'Login')})} />
       <Stack.Screen name='ApplicationForm' component={ApplicationForm} options={({route})=>({title:_.get(route, 'params.customTitle', 'Application form')})} 
       <Stack.Screen name='OtpScreen' component={OtpScreen} options={{title:'Login'}} />

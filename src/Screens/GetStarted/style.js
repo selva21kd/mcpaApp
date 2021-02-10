@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     },
 
     floatBtn: {
-        width: "50%",
+        width: "100%",
         height: "100%",
         backgroundColor: '#fff',
         padding: 12,
@@ -29,14 +29,36 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         justifyContent: 'center',
         alignItems: 'center',
-        opacity: 0.8      
+        opacity: 0.9   
     },
 
     actionBtn:{
         ...Fonts.h6,
         fontWeight: 'bold',
         color: Colors.light.primary.royalBlue
-    }
+    },
+
+    wrapper: {
+        backgroundColor: Colors.light.background.main,
+        flexGrow: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    dot: {
+        width: 7,
+        height: 7,
+        borderRadius: 6,
+        marginLeft: 4,
+        marginRight: 4,
+        backgroundColor: Colors.light.primary.darkAshColor,
+    },
+    activeDot: {
+        width: 12,
+        height: 12,
+        backgroundColor: Colors.light.background.main,
+    },
+
 });
 
 

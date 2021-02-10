@@ -13,6 +13,6 @@ export const ACTION_TYPES = {
 
 export const ROUTE_NAMES = {
     INITIAL_GET_STARTED: 'GetStarted',
-    LANGUAGE_SELECTION_SCREEN: 'languageSelectionScreen',
+    LANGUAGE_SELECTION: 'languageSelection',
 
 }

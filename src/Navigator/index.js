@@ -48,7 +48,7 @@ const Navigator = () => {
         <AppearanceProvider>
             <SafeAreaView style={[Layout.fill, { backgroundColor: colors.card }]}>
                  <NavigationContainer ref={navigationRef}>
-                    <StatusBar barStyle="dark-content" />
+                    <StatusBar barStyle="light-content" />
                     <AuthStack />
                     {/* <Drawer.Navigator initialRouteName="Home">
                         <Drawer.Screen name="Home" component={HomeScreen} />
