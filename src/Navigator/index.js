@@ -1,63 +1,72 @@
-import React, { useEffect } from 'react'
-import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import React, { useEffect, useState, useRef } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { navigationRef } from './rootNavigationService';
-import { SafeAreaView, StatusBar, View, Button } from 'react-native';
+import { SafeAreaView, StatusBar } from 'react-native';
 import { useTheme } from '../Theme';
 import { AppearanceProvider } from 'react-native-appearance';
 import { useDispatch } from "react-redux";
+import NetInfo from '@react-native-community/netinfo'
+import _ from 'loadsh';
 
 import { getAppLanguges } from '../Services/LanguageSelection/actions';
 import AuthStack from './Stacks/AuthStack';
+import NoInternetConnection from "../Screens/HelperScreens/NoInternetConnection";
+import { navigationRef, isReadyRef } from './rootNavigationService';
 
-function HomeScreen({ navigation }) {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Button
-                onPress={() => navigation.navigate('Notifications')}
-                title="Go to notifications"
-            />
-        </View>
-    );
-}
-
-function NotificationsScreen({ navigation }) {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Button onPress={() => navigation.goBack()} title="Go back home" />
-        </View>
-    );
-}
-
-
-const Stack = createStackNavigator();
-const Drawer = createDrawerNavigator();
-
-
-const Navigator = () => {
+const Navigator = (props) => {
     const dispatch = useDispatch();
+    const netInfoRef = useRef();
+
+    const [isConnected, setIsConnected] = useState(true);
+
     useEffect(() => {
+
+        if (!_.isEmpty(navigationRef.current) && isReadyRef.current === false) {
+            isReadyRef.current = true;
+        }
+
+        netInfoRef.current = NetInfo.addEventListener(state => {
+            setIsConnected(state.isConnected && state.isInternetReachable);
+        });
+
         dispatch(getAppLanguges());
+
+        return () => {
+            isReadyRef.current = false;
+            if (_.isFunction(netInfoRef.current)) {
+                netInfoRef.current();
+            }
+        };
+
     }, [])
+
+    const checkConnectivity = () => {
+        if (netInfoRef.isConnected && netInfoRef.isInternetReachable) {
+            setIsConnected(true);
+        }
+    };
 
     const { Layout, NavigationTheme } = useTheme();
     const { colors } = NavigationTheme;
-    
+
     return (
         <AppearanceProvider>
             <SafeAreaView style={[Layout.fill, { backgroundColor: colors.card }]}>
-                 <NavigationContainer ref={navigationRef}>
-                    <StatusBar barStyle="light-content" />
-                    <AuthStack />
-                    {/* <Drawer.Navigator initialRouteName="Home">
-                        <Drawer.Screen name="Home" component={HomeScreen} />
-                        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-                    </Drawer.Navigator> */}
-                </NavigationContainer>
+                {
+                    isConnected ? <NavigationContainer ref={navigationRef} onReady={() => { isReadyRef.current = true }}>
+                                    <StatusBar barStyle="light-content" />
+                                    <AuthStack handleLocalizationChange={(lang)=>props.handleLocalizationChange(lang)} />
+                                    {/* <Drawer.Navigator initialRouteName="Home">
+                                            <Drawer.Screen name="Home" component={HomeScreen} />
+                                            <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+                                        </Drawer.Navigator> 
+                                    */}
+                                </NavigationContainer>
+                    :
+                    <NoInternetConnection retryInternetConnection = {checkConnectivity} />
+                }
             </SafeAreaView>
         </AppearanceProvider>
-        
+
     )
 }
 

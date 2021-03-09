@@ -1,0 +1,9 @@
+{
+  "auth_login": "Proceed With Our Login",
+  "auth_mobile_no": "Mobile Number",
+  "auth_mbl_no_placeholder": "Enter Your Mobile Number",
+  "auth_mbl_required": "Phone Number Is Required",
+  "auth_mbl_min_max": "Phone number must be ten numbers",
+  "auth_mbl_invalid": "Mobile Number Is Invalid",
+  "auth_signin_now": "Signin Now"
+}

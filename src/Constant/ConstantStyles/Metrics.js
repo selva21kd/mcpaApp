@@ -10,7 +10,7 @@ export const medium = normal * 2 // 30
 export const high = medium * 3 // 60
 export const max = normal * 5 // 30
 
-export default {
+export const Metrics = {
   bottomMargin: {
     marginBottom: normal,
   },

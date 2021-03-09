@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>120708026205-kebaflsu61eav7ubtp7ohc27a17tjmk0.apps.googleusercontent.com</string>
+	<string>650959210689-la9ldl20fhff0li4hndbpc8ftnskp4gv.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.120708026205-kebaflsu61eav7ubtp7ohc27a17tjmk0</string>
+	<string>com.googleusercontent.apps.650959210689-la9ldl20fhff0li4hndbpc8ftnskp4gv</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>120708026205-bubc7v14js4b58m1s4b5jsh2v0b8vkfr.apps.googleusercontent.com</string>
+	<string>650959210689-tqmpcfqm0nirmvm18tisrmmas1ddb5tf.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyC6idiSt3GRm0curHmqEeDsrgRoHOaDeXE</string>
+	<string>AIzaSyBE9p-zBFnlbweLhBZViy8E658stS1qz-w</string>
 	<key>GCM_SENDER_ID</key>
-	<string>120708026205</string>
+	<string>650959210689</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>org.mcpaApp</string>
 	<key>PROJECT_ID</key>
-	<string>mcpaapp</string>
+	<string>mcpaprod-fe637</string>
 	<key>STORAGE_BUCKET</key>
-	<string>mcpaapp.appspot.com</string>
+	<string>mcpaprod-fe637.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:120708026205:ios:a274d66c8a0bfc7ed362b4</string>
+	<string>1:650959210689:ios:795d4d4126500dbda7ec40</string>
 </dict>
 </plist>

@@ -1,9 +1,9 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Fonts } from '../../Constant/ConstantStyles/Fonts';
 import { Colors } from '../../Constant/ConstantStyles/Colors';
+import { Metrics } from '../../Constant/ConstantStyles/Metrics'
+import { screenWidth, screenHeight } from '../../Constant/ConstantStyles/Helpers';
 
-const screenHeight = Dimensions.get('window').height;
-const screenWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
 
@@ -58,6 +58,24 @@ const styles = StyleSheet.create({
         height: 12,
         backgroundColor: Colors.light.background.main,
     },
+
+    bottomContainer:{
+        position: 'absolute',
+        bottom: 0,
+    },
+
+    bottomBtn:{
+        backgroundColor: Colors.light.primary.themeColor,
+        width: screenWidth,
+        alignItems: 'center',
+        ...Metrics.verticalPadding
+
+    },
+
+    btnLable: {
+        ...Fonts.body2,
+        color: Colors.light.background.main,
+    }
 
 });
 

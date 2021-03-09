@@ -10,7 +10,7 @@ export const Colors = {
     primary: {
       main: '#FEDBD0',
       dark: '#DAB3A7',
-      textColor: '#452C2E',
+      textColor: '#000000',
       grey : '#8F8E8E',
       darkGrey : '#7C808B',
       darkShadow: '#626262',
@@ -18,7 +18,8 @@ export const Colors = {
       lightGrey : '#BEC3D1',
       mediumAsh:"#5E5E5E",
       darkAshColor: "#9BA1AF",
-      royalBlue: "#3388c4",
+      royalBlue: "#3d7de3",
+      themeColor: '#256bdb',
     },
     secondary: {
       main: '#452C2E',

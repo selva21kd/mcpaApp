@@ -1,7 +1,11 @@
-import { StyleSheet } from 'react-native'
-import Colors from './Colors'
+import Colors from './Colors';
+import { Dimensions } from 'react-native';
 
-export default StyleSheet.create({
+export const screenHeight = Dimensions.get('window').height;
+export const screenWidth = Dimensions.get('window').width;
+
+
+export const Helpers = {
   backgroundReset: {
     backgroundColor: Colors.transparent,
   },
@@ -172,4 +176,4 @@ export default StyleSheet.create({
   textRight: {
     textAlign: 'right',
   },
-})
+}

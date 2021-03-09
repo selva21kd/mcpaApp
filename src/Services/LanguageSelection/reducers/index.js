@@ -1,14 +1,16 @@
 import _ from 'loadsh';
 
-import { ACTION_TYPES } from "../../../Constant/actionAndRouteConstant";
+import { ACTION_TYPES } from "../../../Constant/HelperConst/HelperConstant";
 
 
 const initialState  = {
     name: null,
     key: null,
     defaultLanguage: 'tamil',
-    selectedLanguage: null,
+    selectedLanguageName: null,
+    selectedLanguageKey: null,
     avlLanguages: [],
+    languageTag: 'tm',
 }
 
 
@@ -23,6 +25,13 @@ export default LanguageSelectionReducer = (state = initialState, action) => {
             return {...state, avlLanguages: _.get(action, 'payload', [])};
         case ACTION_TYPES.GET_AVL_LANGUAGES_ERROR:
             return {...state};
+        case ACTION_TYPES.SELECT_DEFAULT_APP_LANG:
+            return { ...state, 
+                defaultLanguage: _.get(action, 'payload.name'), 
+                selectedLanguageKey: _.get(action, 'payload.key'), 
+                selectedLanguageName: _.get(action, 'payload.name'), 
+                languageTag: _.get(action, 'payload.name') === 'tamil' ? 'tm' : 'en',
+            }
         default:
             return state;
     }
