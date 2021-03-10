@@ -8,9 +8,14 @@ import * as yup from 'yup';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import _ from "lodash";
 
+
 import styles from './style';
 import { translate } from "../../Utils/Translator";
 import { Colors } from '../../Constant/ConstantStyles/Colors';
+import { ROUTE_NAMES } from "../../Constant/HelperConst/HelperConstant";
+import { AppTracker } from "../../Utils/AppTracker";
+import { GetDeviceMacAddress } from "../../Utils/GlobalHelperFunction";
+import { GlobalVariables } from '../../Constant/HelperConst/HelperConstant';
 
 const UserLogin = ({ navigation }) => {
     const _mobileRef = useRef(null)
@@ -29,8 +34,14 @@ const UserLogin = ({ navigation }) => {
 
     const { control, handleSubmit, errors, reset } = useForm({ resolver: yupResolver(validationSchema) });
 
-    const onSubmit = data => {
-        console.log('onSubmit',data)
+    const onSubmit = async data => {
+        
+        AppTracker(['firebase', 'userLoginDetails', {
+            macAddress: await GetDeviceMacAddress(),
+            mobileNumber: GlobalVariables.countryCode.concat(_.get(data, 'mobileNo')),
+        }]);
+
+        navigation.navigate(ROUTE_NAMES.OTP_VERIFICATION_SCREEN, { mobileNo: _.get(data, 'mobileNo') })
     };
 
     return (
@@ -39,12 +50,14 @@ const UserLogin = ({ navigation }) => {
                 <Image source={require('../../Assets/illustrations/Authentications/login.jpg')} resizeMode="center" style={styles.imgStyle} />
 
                 <View style={styles.divider}>
-                    <Divider style={{ color: 'red' }} />
+                    <Divider />
                 </View>
 
                 <View style={styles.viewContainer}>
-                    <Text style={styles.ttl_text}>{translate("auth_login")}</Text>
-                    <View>
+                    <Text style={styles.ttlText}>{translate("auth_login")}</Text>
+                    <Text style={styles.descText}>{translate("auth_mobile_otp_desc")}</Text>
+                    <View style={styles.inputContainer}>
+                        
                         <Controller control={control} render={({ onChange, value }) => (
                             <TextInput dense style={styles.mbl_txtInput} mode="outlined"
                                 label={translate("auth_mobile_no")}
@@ -60,7 +73,7 @@ const UserLogin = ({ navigation }) => {
                                 left={<TextInput.Icon name={() => <Icon name={'phone'} size={20} />} />}
                             />
                         )} name={"mobileNo"} defaultValue="" />
-                        {errors.mobileNo && <HelperText type='error' visible={true}>{_.get(errors, 'mobileNo.message', '')}</HelperText> }
+                        {errors.mobileNo && <HelperText type='error' visible={true}>{_.get(errors, 'mobileNo.message', '')}</HelperText>}
                     </View>
                 </View>
 

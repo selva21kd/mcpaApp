@@ -5,5 +5,14 @@
   "auth_mbl_required": "Phone Number Is Required",
   "auth_mbl_min_max": "Phone number must be ten numbers",
   "auth_mbl_invalid": "Mobile Number Is Invalid",
-  "auth_signin_now": "Signin Now"
+  "auth_signin_now": "Get OTP",
+  "auth_mobile_otp_desc": "We will sent you an one time password on this mobile number",
+  "auth_otp_verify_title": "OTP Verification",
+  "auth_otp_sent_text": "Enter the OTP sent to",
+  "auth_otp_resent_text": "Don't receive OTP?",
+  "auth_resend_otp_btn": "Resend OTP",
+  "auth_btn_verify_proceed": "Verify & Proceed",
+  "auth_loader_validatingOtp": "Validating OTP...",
+  "auth_loader_validatedOTP": "Success!",
+  "auth_loader_otpValidationError": "The OTP entered is incorrect"
 }

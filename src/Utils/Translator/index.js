@@ -2,8 +2,6 @@ import memoize from "lodash.memoize";
 import * as RNLocalize from "react-native-localize";
 import { I18nManager } from "react-native";
 import i18n from "i18n-js";
-import { useSelector } from "react-redux";
-import { useState } from "react";
 
 
 

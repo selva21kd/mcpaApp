@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View } from 'react-native';
 import _ from 'lodash';
 import { createStackNavigator, HeaderBackButton } from '@react-navigation/stack';
 
@@ -8,7 +8,7 @@ import { Colors } from '../../Constant/ConstantStyles/Colors'
 import GetStarted from '../../Screens/GetStarted';
 import LanguageSelection from "../../Screens/LanguageSelection";
 import UserLogin from "../../Screens/UserLogin";
-import { IconButton } from "react-native-paper";
+import OTPVerficationScreen from "../../Screens/OTPVerficationScreen";
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
@@ -74,8 +74,8 @@ function AuthStack() {
       <Stack.Screen name={ROUTE_NAMES.INITIAL_GET_STARTED} component={GetStarted} options={{ headerShown: false, ...headerOptions }} />
       <Stack.Screen name={ROUTE_NAMES.LANGUAGE_SELECTION} component={LanguageSelection} options={{ title: 'Language Selection', headerShown: false, ...headerOptions  }} />
        <Stack.Screen name={ROUTE_NAMES.USER_LOGIN} component={UserLogin} options={{ headerTitle: "", ...plainHeaderOptions }} />
-      {/*<Stack.Screen name={ROUTE_NAMES.OTP_SCREEN} component={OtpScreen} options={({route})=>({title:_.get(route, 'params.customTitle', 'Login')})} />
-      <Stack.Screen name='ApplicationForm' component={ApplicationForm} options={({route})=>({title:_.get(route, 'params.customTitle', 'Application form')})} 
+      <Stack.Screen name={ROUTE_NAMES.OTP_VERIFICATION_SCREEN} component={OTPVerficationScreen} options={{ headerTitle: "", ...plainHeaderOptions }} />
+      {/*<Stack.Screen name='ApplicationForm' component={ApplicationForm} options={({route})=>({title:_.get(route, 'params.customTitle', 'Application form')})} 
       <Stack.Screen name='OtpScreen' component={OtpScreen} options={{title:'Login'}} />
       <Stack.Screen name='Home from Auth Stack' component={Home} />
       <Stack.Screen name="SuccessSplashScreen" component={SuccessSplashScreen} options={{title: '', headerShown:false}}/> */}

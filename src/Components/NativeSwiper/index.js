@@ -12,7 +12,7 @@ const NativeSwiper = (props) => {
                 {props.imgSrc.map((item, key) => (
                     <View key={key} style={styles.swiperContent}>
                         <Image 
-                            source={item} style={styles.swiperImg} resizeMode='contain' />
+                            source={item} style={styles.swiperImg} resizeMode="contain" />
                     </View>
                 ))} 
             </Swiper>

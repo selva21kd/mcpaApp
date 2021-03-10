@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "120708026205",
+    "firebase_url": "https://mcpaapp-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "mcpaapp",
+    "storage_bucket": "mcpaapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120708026205:android:18abb95fd709ef6ed362b4",
+        "android_client_info": {
+          "package_name": "com.mcpaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120708026205-8u41gv5po3s5v3j6rj38oj9mfgshirsr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mcpaapp",
+            "certificate_hash": "86ed0a540dca28ac8f7a20f526c827bc439799da"
+          }
+        },
+        {
+          "client_id": "120708026205-61603sgc590ujtrtn3bhtbvh767uoafo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBANvGUXbC6rcrajeLbMwS8CtV9Uxx-QNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120708026205-61603sgc590ujtrtn3bhtbvh767uoafo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "120708026205-kebaflsu61eav7ubtp7ohc27a17tjmk0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.mcpaApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

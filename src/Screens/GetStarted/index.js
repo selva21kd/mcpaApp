@@ -4,10 +4,10 @@ import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import NativeSwiper from '../../Components/NativeSwiper';
 import styles from './style';
 import { ROUTE_NAMES } from '../../Constant/HelperConst/HelperConstant'
+import NavigationService from "../../Navigator/rootNavigationService"
 
 
-
-const GetStarted = ({ navigation }) => {
+const GetStarted = () => {
 
     const imgSrc = [
         require('../../Assets/Images/BackgroundImages/initial_scr/img1.jpg'),
@@ -29,15 +29,11 @@ const GetStarted = ({ navigation }) => {
                     autoplay={true} autoplayTimeout={5} showsPagination={true}
                     height={"100%"} width={"100%"}
                     removeClippedSubviews={true}
-                />
-                {/* <View style={styles.floatBottomView}>
-                    <TouchableOpacity onPress={() => navigation.navigate(ROUTE_NAMES.LANGUAGE_SELECTION)} style={styles.floatBtn}>
-                        <Text style={styles.actionBtn}>தொடங்குவோம் / Let's Get Started</Text>
-                    </TouchableOpacity>
-                </View> */}
+                /> 
             </View>
+
             <View style={styles.bottomContainer}>
-                <TouchableOpacity style={styles.bottomBtn} onPress={() => navigation.navigate(ROUTE_NAMES.LANGUAGE_SELECTION)}>
+                <TouchableOpacity style={styles.bottomBtn} onPress={() => NavigationService.navigateAndReset(ROUTE_NAMES.LANGUAGE_SELECTION)}>
                     <Text style={styles.btnLable}>தொடங்குவோம் / Let's Get Started</Text>
                 </TouchableOpacity>
             </View>

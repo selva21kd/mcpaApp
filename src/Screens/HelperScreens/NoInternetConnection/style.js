@@ -1,13 +1,14 @@
 import { StyleSheet } from 'react-native';
 import { Metrics } from '../../../Constant/ConstantStyles/Metrics';
 import { Colors } from '../../../Constant/ConstantStyles/Colors';
+import { Fonts } from '../../../Constant/ConstantStyles/Fonts';
 import { Helpers, screenWidth, screenHeight } from '../../../Constant/ConstantStyles/Helpers';
 
 const styles = StyleSheet.create({
     mainContainer:{
         width: screenWidth,
         height: screenHeight,
-        backgroundColor: Colors.light.background.veryLightGrey,
+        backgroundColor: Colors.light.background.main,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -23,6 +24,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         ...Metrics.verticalPadding
 
+    },
+
+    btnLable: {
+        ...Fonts.body2,
+        fontWeight: "bold",
+        color: Colors.light.background.main,
     }
 });
 

@@ -13,7 +13,7 @@ const NoInternetConnection = ({ retryInternetConnection }) =>{
             <LottieView source={require('../../../Assets/illustrations/noInternet/no-internet.json')} autoPlay loop  style={{width: "100%", }}/>
             <View style={styles.bottomContainer}>
                 <TouchableOpacity style={styles.bottomBtn} onPress={retryInternetConnection}>
-                    <Text>Retry</Text>
+                    <Text style={styles.btnLable}>Retry</Text>
                 </TouchableOpacity>
             </View>
         </View>

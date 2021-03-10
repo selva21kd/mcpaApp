@@ -14,11 +14,15 @@ export const ACTION_TYPES = {
     DELETE_DEFAULT_APP_LANG: 'DELETE_DEFAULT_APP_LANG',
 };
 
+export const GlobalVariables = {
+    countryCode: "+91"
+};
 
 export const ROUTE_NAMES = {
-    INITIAL_GET_STARTED: 'GetStarted',
-    LANGUAGE_SELECTION: 'languageSelection',
-    USER_LOGIN: 'UserLogin'
+    INITIAL_GET_STARTED: "GetStarted",
+    LANGUAGE_SELECTION: "languageSelection",
+    USER_LOGIN: "UserLogin",
+    OTP_VERIFICATION_SCREEN: "OTPVerification"
 
 };
 

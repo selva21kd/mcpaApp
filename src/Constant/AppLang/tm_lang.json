@@ -5,5 +5,14 @@
   "auth_mbl_required": "மொபைல் எண் தேவை",
   "auth_mbl_min_max": "தொலைபேசி எண் பத்து எண்களாக இருக்க வேண்டும்",
   "auth_mbl_invalid": "மொபைல் எண் தவறானது",
-  "auth_signin_now": "இப்போது உள்நுழைக"
+  "auth_signin_now": "OTPஐ பெறுக",
+  "auth_mobile_otp_desc": "இந்த மொபைல் எண்ணில் ஒரு முறை கடவுச்சொல்லை உங்களுக்கு அனுப்புவோம்",
+  "auth_otp_verify_title": "OTP சரிபார்ப்பு",
+  "auth_otp_sent_text": "இந்த நம்பருக்கு OTP அனுப்பப்பட்டது",
+  "auth_otp_resent_text": "OTP ஐப் பெறவில்லையா?",
+  "auth_resend_otp_btn": "Otp ஐ மீண்டும் அனுப்பு",
+  "auth_btn_verify_proceed": "சரிபார்த்து தொடரவும்",
+  "auth_loader_validatingOtp": "otp ஐ சரிபார்க்கிறது...",
+  "auth_loader_validatedOTP": "OTP சரிபார்க்கப்பட்டது!",
+  "auth_loader_otpValidationError": "தவறான OTP"
 }

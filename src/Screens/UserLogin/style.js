@@ -27,11 +27,21 @@ const styles = StyleSheet.create({
         height: "35%",
     },
     
-    ttl_text:{
+    ttlText:{
         ...Fonts.h6,
         ...Metrics.verticalPadding,
         fontWeight: "bold",
         textAlign: "center",
+    },
+
+    inputContainer:{
+        ...Metrics.verticalPadding
+    },
+
+    descText:{
+        ...Metrics.tinyVerticalPadding,
+        ...Fonts.smallMedium,
+        letterSpacing: 1
     },
 
     mbl_txtInput: {

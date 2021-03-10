@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaView, StatusBar } from 'react-native';
 import { useTheme } from '../Theme';
 import { AppearanceProvider } from 'react-native-appearance';
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import NetInfo from '@react-native-community/netinfo'
 import _ from 'loadsh';
 
