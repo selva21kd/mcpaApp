@@ -92,7 +92,7 @@ export const Metrics = {
   highVerticalPadding:{
     paddingVertical: medium + medium,
   },
-  maxHighPadding:{
+  maxHighVerticalPadding:{
     paddingVertical: medium + small,
   },
 }

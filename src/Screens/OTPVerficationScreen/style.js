@@ -2,31 +2,36 @@ import { StyleSheet } from 'react-native';
 import { Fonts } from '../../Constant/ConstantStyles/Fonts';
 import { Colors } from '../../Constant/ConstantStyles/Colors';
 import { Metrics } from "../../Constant/ConstantStyles/Metrics";
-import { Helpers, screenWidth, screenHeight } from '../../Constant/ConstantStyles/Helpers';
+import { Helpers } from '../../Constant/ConstantStyles/Helpers';
 
 const styles = StyleSheet.create({
+
+    flexContainer:{
+        flex: 1
+    }, 
+
     container: {
-        width: screenWidth,
-        height: screenHeight,
-        backgroundColor: Colors.light.background.main
+        ...Helpers.fullWidth,
+        height: "100%",
+        backgroundColor: Colors.light.background.main,
     },
 
     bannerContainer: {
         height: "35%",
-        width: "100%",
+        ...Helpers.fullWidth,
     },
 
     imgStyle: {
         height: "100%",
-        width: "100%",
+        ...Helpers.fullWidth,
     },
 
     divider: {
-        width: screenWidth,
+        ...Helpers.fullWidth,
     },
 
     inputContainer: {
-        width: "100%",
+        ...Helpers.fullWidth,
         ...Metrics.verticalPadding,
         ...Metrics.horizontalPadding,
     },
@@ -40,7 +45,8 @@ const styles = StyleSheet.create({
     secondaryText: {
         ...Fonts.body2,
         ...Metrics.verticalPadding,
-        textAlign: "center"
+        textAlign: "center",
+        paddingBottom: 0,
     },
 
     boldText: {
@@ -48,7 +54,7 @@ const styles = StyleSheet.create({
     },
 
     otpContainer: {
-        width: '100%', 
+        width: '100%',
         height: 60,
         borderWidth: 1,
         borderColor: Colors.light.background.veryLightGrey,
@@ -74,37 +80,84 @@ const styles = StyleSheet.create({
         borderColor: Colors.light.background.brownColor,
     },
 
-    row:{
-        width: "100%",
+    row: {
+        ...Helpers.fullWidth,
         ...Helpers.row,
+    },
+
+    column: {
+        ...Helpers.column,
+    },
+
+    flexEnd: {
         justifyContent: "flex-end"
     },
 
-    btnRipple:{
-        // borderColor: 'red',
-        // borderWidth: 0.5
+    centerAlign: {
+        ...Helpers.rowCenter,
     },
 
-    smallText:{
-        ...Fonts.medium,
+    paddingBottom: {
+        ...Metrics.verticalPadding,
+        paddingTop: 0,
     },
 
-    textButton:{
-        ...Fonts.body1,
+    smallText: {
+        ...Fonts.small,
+    },
+
+    halfWidth: {
+        ...Helpers.halfWidth
+    },
+
+    paddingTop: {
+        paddingTop: "2.5%"
+    },
+
+    outlineDisabledBtn: {
+        borderWidth: 1,
+        borderColor: Colors.light.primary.darkAshColor,
+        borderRadius: 10,
+        padding: "2%",
+    },
+
+    btnRipple: {
+        borderWidth: 1,
+        borderColor: Colors.light.primary.royalBlue,
+        borderRadius: 10,
+        padding: "2%",
+
+    },
+
+    textButton: {
+        ...Fonts.body2,
         fontWeight: "bold",
         color: Colors.light.primary.themeColor,
     },
 
-    bottomContainer:{
-        position: 'absolute',
-        bottom: 0,
+    disabledColor:{
+        color: Colors.light.primary.darkAshColor
     },
 
-    bottomBtn:{
+    textButtonWithMetrics: {
+        ...Fonts.body1,
+        fontWeight: "bold",
+        color: Colors.light.primary.themeColor,
+        // marginTop:8
+    },
+
+    bottomContainer: {
+        position: 'absolute',
+        bottom: 0,
+        ...Helpers.fullWidth
+    },
+
+    bottomBtn: {
         backgroundColor: Colors.light.primary.themeColor,
-        width: screenWidth,
+        ...Helpers.fullWidth,
         alignItems: 'center',
-        ...Metrics.verticalPadding
+        ...Metrics.verticalPadding,
+
 
     },
 

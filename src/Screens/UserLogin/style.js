@@ -3,27 +3,38 @@ import { StyleSheet, Dimensions } from 'react-native';
 import { Fonts } from '../../Constant/ConstantStyles/Fonts';
 import { Colors } from '../../Constant/ConstantStyles/Colors';
 import { Metrics } from "../../Constant/ConstantStyles/Metrics";
-import { Helpers, screenWidth, screenHeight } from '../../Constant/ConstantStyles/Helpers';
+import { Helpers } from "../../Constant/ConstantStyles/Helpers";
 
 const styles = StyleSheet.create({
+
     container: {
-        width: screenWidth,
-        height: screenHeight,
+        height: "100%",
+        width: "100%"
+    },
+
+    flexContainer: {
+        flex: 1
+    },
+
+    fullHeight:{
+        ...Helpers.fullWidth,
         backgroundColor: Colors.light.background.main,
+        flex: 1
+
     },
 
     viewContainer: {
-        width: screenWidth,
+        ...Helpers.fullWidth,
         ...Metrics.avgVerticalPadding,
         ...Metrics.highHorizontalPadding,
     },
 
     divider: {
-        width: screenWidth,
+        ...Helpers.fullWidth,
     },
 
     imgStyle: {
-        width: screenWidth,
+        ...Helpers.fullWidth,
         height: "35%",
     },
     
@@ -50,12 +61,13 @@ const styles = StyleSheet.create({
     
     bottomContainer:{
         position: 'absolute',
-        bottom: 0,
+        bottom: "0%",
+        ...Helpers.fullWidth,
     },
 
     bottomBtn:{
         backgroundColor: Colors.light.primary.themeColor,
-        width: screenWidth,
+        ...Helpers.fullWidth,
         alignItems: 'center',
         ...Metrics.verticalPadding
 

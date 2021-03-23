@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Text, StyleSheet, SafeAreaView } from 'react-native';
 
 import NativeSwiper from '../../Components/NativeSwiper';
 import styles from './style';
@@ -19,7 +19,7 @@ const GetStarted = () => {
     ];
 
     return (
-        <View>
+        <SafeAreaView style={styles.fullHeight}>
             <View style={styles.fullHeight}>
                 <NativeSwiper imgSrc={imgSrc}
                     style={styles.wrapper}
@@ -37,7 +37,7 @@ const GetStarted = () => {
                     <Text style={styles.btnLable}>தொடங்குவோம் / Let's Get Started</Text>
                 </TouchableOpacity>
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 

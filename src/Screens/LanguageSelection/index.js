@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TouchableOpacity, Image, SafeAreaView } from 'react-native';
 import { useDispatch } from "react-redux";
 import * as RNLocalize from "react-native-localize";
 import auth from '@react-native-firebase/auth';
@@ -32,40 +32,38 @@ const LanguageSelection = ({ navigation }) => {
         let language = await dispatch(selectAppLanguage(selectedLang));
         setLang(selectedLang.languageTag);
         auth().languageCode = selectedLang.languageTag;
-        AppTracker(['firebase', 'languageSelection', {
+        await AppTracker(['firebase'], 'languageSelection', {
             code: selectedLang.languageTag,
             name: selectedLang.name,
             key: selectedLang.key
-        }]);
+        });
         if (language) navigation.navigate(ROUTE_NAMES.USER_LOGIN)
     };
 
     return (
-        <View style={styles.container}>
-            <Image source={require('../../Assets/illustrations/multilingual/language.jpg')} resizeMode="stretch" style={styles.imgStyle} />
-            <View style={styles.mainContainer}>
-                {/* <View> */}
-                <Text style={styles.mainHeading}>மொழியை தேர்ந்தெடுங்கள் / Choose Your Language</Text>
-                {
-                    sampleData.map(lang => <TouchableOpacity style={styles.btn_menu} key={'lang_' + lang.key} onPress={() => handleLangSelection(lang)}>
-                        <View style={styles.btn_langSelection}>
-                            <Text style={styles.lbl_btn}>{lang.name}</Text>
-                        </View>
-                    </TouchableOpacity>
-                    )
+        <SafeAreaView>
+            <View style={styles.container}>
+                <Image source={require('../../Assets/illustrations/multilingual/language.jpg')} resizeMode="stretch" style={styles.imgStyle} />
+                <View style={styles.mainContainer}>
+                    <Text style={styles.mainHeading}>மொழியை தேர்ந்தெடுங்கள் / Choose Your Language</Text>
+                    {
+                        sampleData.map(lang => <TouchableOpacity style={styles.btn_menu} key={'lang_' + lang.key} onPress={() => handleLangSelection(lang)}>
+                            <View style={styles.btn_langSelection}>
+                                <Text style={styles.lbl_btn}>{lang.name}</Text>
+                            </View>
+                        </TouchableOpacity>
+                        )
 
-                }
-                {/* </View> */}
+                    }
 
+
+                </View>
             </View>
-        </View>
+        </SafeAreaView>
     )
-    // return (
-    //     <LottieView source={require('../../Assets/illustrations/christmas.json')} autoPlay loop  style={{width: "100%", height: "50%", backgroundColor: 'black'}}/>
-    // )
 }
 
-export default LanguageSelection
+export default LanguageSelection;
 
 
 

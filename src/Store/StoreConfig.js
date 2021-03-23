@@ -37,7 +37,7 @@ export default (rootReducer, rootSaga) => {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
   // Redux persist
-  const persistedReducer = persistReducer(persistConfig, rootReducer)
+  const persistedReducer = persistReducer(persistConfig, rootReducer) 
 
   const store = createStore(persistedReducer, composeEnhancers(...enhancers))
   const persistor = persistStore(store)

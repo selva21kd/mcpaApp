@@ -2,12 +2,11 @@ import { StyleSheet } from 'react-native';
 import { Metrics } from '../../../Constant/ConstantStyles/Metrics';
 import { Colors } from '../../../Constant/ConstantStyles/Colors';
 import { Fonts } from '../../../Constant/ConstantStyles/Fonts';
-import { Helpers, screenWidth, screenHeight } from '../../../Constant/ConstantStyles/Helpers';
 
 const styles = StyleSheet.create({
     mainContainer:{
-        width: screenWidth,
-        height: screenHeight,
+        width: "100%",
+        height: "100%",
         backgroundColor: Colors.light.background.main,
         justifyContent: 'center',
         alignItems: 'center'
@@ -20,7 +19,7 @@ const styles = StyleSheet.create({
 
     bottomBtn:{
         backgroundColor: Colors.light.primary.themeColor,
-        width: screenWidth,
+        width: "100%",
         alignItems: 'center',
         ...Metrics.verticalPadding
 

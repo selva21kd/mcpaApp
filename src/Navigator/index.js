@@ -9,14 +9,23 @@ import _ from 'loadsh';
 
 import { getAppLanguges } from '../Services/LanguageSelection/actions';
 import AuthStack from './Stacks/AuthStack';
+import AppStack from './Stacks/AppStack';
 import NoInternetConnection from "../Screens/HelperScreens/NoInternetConnection";
 import { navigationRef, isReadyRef } from './rootNavigationService';
+import { setI18nConfig } from "../Utils/Translator"
+
+const initialCallAfterStackChange = (val) => {
+    setI18nConfig(val)
+}
 
 const Navigator = (props) => {
     const dispatch = useDispatch();
     const netInfoRef = useRef();
 
+    const isAuthenticated = useSelector(state=> state.userProfile.isAuthenticated);
     const [isConnected, setIsConnected] = useState(true);
+    const appLangTag = useSelector(state=> state.appLang.languageTag);
+    initialCallAfterStackChange(appLangTag);
 
     useEffect(() => {
 
@@ -54,12 +63,11 @@ const Navigator = (props) => {
                 {
                     isConnected ? <NavigationContainer ref={navigationRef} onReady={() => { isReadyRef.current = true }}>
                                     <StatusBar barStyle="light-content" />
-                                    <AuthStack handleLocalizationChange={(lang)=>props.handleLocalizationChange(lang)} />
-                                    {/* <Drawer.Navigator initialRouteName="Home">
-                                            <Drawer.Screen name="Home" component={HomeScreen} />
-                                            <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-                                        </Drawer.Navigator> 
-                                    */}
+                                    {
+                                        isAuthenticated ? <AppStack handleLocalizationChange={(lang)=>props.handleLocalizationChange(lang)} /> 
+                                            :
+                                        <AuthStack handleLocalizationChange={(lang)=>props.handleLocalizationChange(lang)} />
+                                    }
                                 </NavigationContainer>
                     :
                     <NoInternetConnection retryInternetConnection = {checkConnectivity} />

@@ -2,8 +2,6 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 import { Colors } from "../../Constant/ConstantStyles/Colors";
 
-const screenHeight = Dimensions.get('window').height;
-
 const styles = StyleSheet.create({
 
     container: {
@@ -20,7 +18,7 @@ const styles = StyleSheet.create({
 
     swiperImg: {
         flex: 1,
-        height: screenHeight,
+        height: "100%",
     },
 
 });

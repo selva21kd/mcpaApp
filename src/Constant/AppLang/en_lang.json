@@ -14,5 +14,27 @@
   "auth_btn_verify_proceed": "Verify & Proceed",
   "auth_loader_validatingOtp": "Validating OTP...",
   "auth_loader_validatedOTP": "Success!",
-  "auth_loader_otpValidationError": "The OTP entered is incorrect"
+  "auth_loader_otpValidationError": "The OTP entered is incorrect",
+  "auth_change_mbl_number": "Change Mobile Number",
+  "or": "Or",
+  "auth_signup_welcomeText": "Welcome To MCPA",
+  "auth_signup_btn_text": "Signup Now",
+  "InputFieldNames":{
+    "fullName": "FullName",
+    "mobile": "Mobile Number",
+    "email": "Email",
+    "address1": "Address1",
+    "address2": "Address2",
+    "city": "City",
+    "state": "State",
+    "pinCode": "Pincode"
+  },
+  "ValidationMessages":{
+    "req_fullName": "Fullname is required",
+    "invalid_email": "Email is invalid",
+    "req_address": "Address is required",
+    "req_city": "City is required",
+    "req_state": "State is required",
+    "req_pincode": "Pincode is required"
+  }
 }

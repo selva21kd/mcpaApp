@@ -28,9 +28,10 @@ export default LanguageSelectionReducer = (state = initialState, action) => {
         case ACTION_TYPES.SELECT_DEFAULT_APP_LANG:
             return { ...state, 
                 defaultLanguage: _.get(action, 'payload.name'), 
+                languageTag: _.get(action, 'payload.languageTag'),
                 selectedLanguageKey: _.get(action, 'payload.key'), 
                 selectedLanguageName: _.get(action, 'payload.name'), 
-                languageTag: _.get(action, 'payload.name') === 'tamil' ? 'tm' : 'en',
+                
             }
         default:
             return state;

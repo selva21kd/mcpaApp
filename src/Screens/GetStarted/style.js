@@ -1,27 +1,26 @@
 import { StyleSheet } from 'react-native';
 import { Fonts } from '../../Constant/ConstantStyles/Fonts';
 import { Colors } from '../../Constant/ConstantStyles/Colors';
-import { Metrics } from '../../Constant/ConstantStyles/Metrics'
-import { screenWidth, screenHeight } from '../../Constant/ConstantStyles/Helpers';
-
+import { Metrics } from '../../Constant/ConstantStyles/Metrics';
+import { Helpers } from '../../Constant/ConstantStyles/Helpers';
 
 const styles = StyleSheet.create({
 
     fullHeight: {
-        height: screenHeight
+        height: "100%"
     },
 
     floatBottomView: {
         position: 'absolute',
         alignItems: 'center',
         justifyContent: 'center',
-        width: screenWidth,
+        ...Helpers.fullWidth,
         bottom: "20%",
         // height: "20%"
     },
 
     floatBtn: {
-        width: "100%",
+        ...Helpers.fullWidth,
         height: "100%",
         backgroundColor: '#fff',
         padding: 12,
@@ -62,11 +61,12 @@ const styles = StyleSheet.create({
     bottomContainer:{
         position: 'absolute',
         bottom: 0,
+        ...Helpers.fullWidth,
     },
 
     bottomBtn:{
         backgroundColor: Colors.light.primary.themeColor,
-        width: screenWidth,
+        ...Helpers.fullWidth,
         alignItems: 'center',
         ...Metrics.verticalPadding
 

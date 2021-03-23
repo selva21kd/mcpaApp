@@ -17,7 +17,7 @@ export const translate = memoize(
 );
 
 export const setI18nConfig = (langTag) => {
-
+  console.log("am i?")
   // fallback if no available language fits
   const fallback = { languageTag: langTag, isRTL: false };
 

@@ -12,6 +12,13 @@ export const ACTION_TYPES = {
     SELECT_DEFAULT_APP_LANG: 'SELECT_DEFAULT_APP_LANG',
     UPDATE_DEFAULT_APP_LANG: 'UPDATE_DEFAULT_APP_LANG',
     DELETE_DEFAULT_APP_LANG: 'DELETE_DEFAULT_APP_LANG',
+
+    GET_SET_USER_INFO: "GET_SET_USER_INFO",
+    GET_SET_USER_MOBILE: "GET_SET_USER_MOBILE",
+    GET_SET_USER_INFO_PENDING: "GET_SET_USER_INFO_PENDING",
+    GET_SET_USER_INFO_SUCCESS: "GET_SET_USER_INFO_SUCCESS",
+    GET_SET_USER_INFO_ERROR: "GET_SET_USER_INFO_ERROR",
+    CHANGE_AUTH_STATUS: "CHANGE_AUTH_STATUS",
 };
 
 export const GlobalVariables = {
@@ -22,7 +29,9 @@ export const ROUTE_NAMES = {
     INITIAL_GET_STARTED: "GetStarted",
     LANGUAGE_SELECTION: "languageSelection",
     USER_LOGIN: "UserLogin",
-    OTP_VERIFICATION_SCREEN: "OTPVerification"
+    OTP_VERIFICATION_SCREEN: "OTPVerification",
+    APP_LANDING_SCREEN: "AppLandingScreen",
+    USER_SIGNUP: "UserSignup"
 
 };
 
@@ -30,4 +39,23 @@ export const ROUTE_NAMES = {
 export const FIREBASE_DOCUMENT_NAMES = {
     AVAILABLE_APP_LANGUAGES: 'app_languages',
     LOGIN_OR_SIGNUP_SCR:'LoginOrSignup_Scr',
+};
+
+export const NAV_MENUS = {
+    HOME:'Home',
+    SERVICES: 'Services',
+    MESSAGES: 'Spritual Messages',
+    EVENTS: 'Events',
+    LANGUAGE_SELECTION: 'Change Language',
+    PRIVACY_POLICY: 'Privacy Policy',
+}
+
+export const NAV_MENU_ICONS = {
+    [NAV_MENUS.HOME]:'home-account',
+    [NAV_MENUS.SERVICES]:'account-tie',
+    [NAV_MENUS.MESSAGES]:'account-cash',
+    [NAV_MENUS.EVENTS]:'account-group',
+    [NAV_MENUS.LANGUAGE_SELECTION]:'folder',
+    [NAV_MENUS.PRIVACY_POLICY]:'lock-outline',
+    
 };

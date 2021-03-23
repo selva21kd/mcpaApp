@@ -10,9 +10,31 @@
   "auth_otp_verify_title": "OTP சரிபார்ப்பு",
   "auth_otp_sent_text": "இந்த நம்பருக்கு OTP அனுப்பப்பட்டது",
   "auth_otp_resent_text": "OTP ஐப் பெறவில்லையா?",
-  "auth_resend_otp_btn": "Otp ஐ மீண்டும் அனுப்பு",
+  "auth_resend_otp_btn": "OTP மீண்டும் அனுப்ப",
   "auth_btn_verify_proceed": "சரிபார்த்து தொடரவும்",
   "auth_loader_validatingOtp": "otp ஐ சரிபார்க்கிறது...",
   "auth_loader_validatedOTP": "OTP சரிபார்க்கப்பட்டது!",
-  "auth_loader_otpValidationError": "தவறான OTP"
+  "auth_loader_otpValidationError": "தவறான OTP",
+  "auth_change_mbl_number": "மொபைல் எண்ணை மாற்ற",
+  "or": "அல்லது",
+  "auth_signup_welcomeText": "MCPAக்கு வரவேற்கிறோம்",
+  "auth_signup_btn_text": "இப்பொது பதிவு செய்",
+  "InputFieldNames":{
+    "fullName": "முழுப்பெயர்",
+    "mobile": "கைபேசி எண்",
+    "email": "மின்னஞ்சல்",
+    "address1": "முகவரி-1",
+    "address2": "முகவரி-2",
+    "city": "நகரம்",
+    "state": "மாநிலம்",
+    "pinCode": "அஞ்சல் குறியீடு(Pincode)"
+  },
+  "ValidationMessages":{
+    "req_fullName": "முழுப்பெயர் தேவை",
+    "invalid_email": "மின்னஞ்சல் தவறானது",
+    "req_address": "முகவரி தேவை",
+    "req_city": "நகரம் தேவை",
+    "req_state": "மாநிலம் தேவை",
+    "req_pincode": "அஞ்சல் குறியீடு(Pincode) தேவை"
+  }
 }

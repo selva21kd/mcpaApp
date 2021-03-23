@@ -2,18 +2,18 @@ import { StyleSheet, Dimensions } from 'react-native';
 import { Fonts } from '../../Constant/ConstantStyles/Fonts';
 import { Colors } from '../../Constant/ConstantStyles/Colors';
 import { Metrics } from '../../Constant/ConstantStyles/Metrics';
-import { Helpers, screenWidth, screenHeight } from '../../Constant/ConstantStyles/Helpers';
+import { Helpers } from '../../Constant/ConstantStyles/Helpers';
 
 const styles = StyleSheet.create({
     container: {
         backgroundColor: Colors.light.background.main,
-        height: screenHeight,
-        width: screenWidth,
+        height: "100%",
+        width: "100%",
         flexDirection: 'column',
         
     },
     imgStyle:{
-        width: screenWidth,
+        width: "100%",
         height: "35%",
         paddingBottom: 0,
         marginBottom: 0,

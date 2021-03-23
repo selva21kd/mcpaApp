@@ -32,7 +32,8 @@ export const Colors = {
       greyTextColor: '#7C808B',
       brownColor: "#69442d",
       global: "#FEDBD0",
-      veryLightGrey: '#F9F9F9'
+      veryLightGrey: '#F9F9F9',
+      greyTexture: "#f5f5f5",
     },
     surface: {
       main: '#FFF0E8',

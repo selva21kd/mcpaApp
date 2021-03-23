@@ -2,6 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import _ from 'lodash';
 import { createStackNavigator, HeaderBackButton } from '@react-navigation/stack';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { ROUTE_NAMES } from '../../Constant/HelperConst/HelperConstant';
 import { Colors } from '../../Constant/ConstantStyles/Colors'
@@ -9,7 +10,6 @@ import GetStarted from '../../Screens/GetStarted';
 import LanguageSelection from "../../Screens/LanguageSelection";
 import UserLogin from "../../Screens/UserLogin";
 import OTPVerficationScreen from "../../Screens/OTPVerficationScreen";
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
 const HeaderBackIcon = (props) => {
@@ -55,10 +55,7 @@ const headerOptions = {
   headerTitleStyle: {
     fontWeight: 'bold',
   },
-  // headerMode: 'none',
   headerLeft: (props) => <HeaderBackIcon {...props} />,
-  // headerBackTitle: '',
-  
 }
 
 const plainHeaderOptions = {
